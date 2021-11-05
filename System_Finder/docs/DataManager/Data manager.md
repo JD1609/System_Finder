@@ -2,8 +2,9 @@
 # DataProvider
 Provides data in format based on input string.
 
-> For example:
+- For example:
 >  **input**: "Processor of this pc is: **{cpuName}** @**{cpuClock=Ghz}** GHz [**{cpuCores}** C/**{cpuThreads}** T]"
+>  
 >  **output**: "Processor of this pc is: **AMD FX-8320** @**3,5**GHz [**8** C/**8**T]"
 
 
