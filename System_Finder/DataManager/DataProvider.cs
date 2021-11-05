@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System_Finder.Hardware;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace System_Finder.DataManager
 {
     /// <summary>
     /// Dataprovider for string HW representation.
     /// Not optimized for more components of one type!
-    /// For more informations about this class see <see href="https://www.github.com">documentation</see>.
+    /// For more informations about this class see 
+    /// <see href="https://github.com/JD1609/System_Finder/blob/main/System_Finder/docs/DataManager/Data%20provider.md">documentation</see>.
     /// </summary>
     public static class DataProvider
     {
         /// <summary>
-        /// Returns HW components based on input string. For more informations about input string variables see <see href="https://www.github.com/">documentation</see>.
+        /// Returns HW components based on input string. 
+        /// For more informations about input string variables see 
+        /// <see href="https://github.com/JD1609/System_Finder/blob/main/System_Finder/docs/DataManager/Data%20provider.md">documentation</see>.
         /// </summary>
         /// <param name="dataSource">Component(s) informations in input string</param>
         /// <param name="inputFormat"></param>
@@ -128,7 +129,7 @@ namespace System_Finder.DataManager
         {
             var name = Motherboard.GetName();
 
-            dictionary.Add("{motherboard}", name);
+            dictionary.Add("{motherboardName}", name);
         }
     }
 }
