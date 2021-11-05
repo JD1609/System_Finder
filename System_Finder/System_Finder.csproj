@@ -52,6 +52,12 @@
     <Compile Include="Hardware\CPU.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="docs\DataManager\Data provider.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="docs\Hardware\" />
+    <Folder Include="docs\OperationSystem\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
