@@ -110,8 +110,8 @@ namespace System_Finder.DataManager
             dictionary.Add("{ramName}", name);
             dictionary.Add("{ramType}", type);
             dictionary.Add("{ramCapacity}", capacityGB.ToString());
-            dictionary.Add("{ramCapacity=Mhz}", capacityMB.ToString());
-            dictionary.Add("{ramCapacity=Ghz}", capacityGB.ToString());
+            dictionary.Add("{ramCapacity=MB}", capacityMB.ToString());
+            dictionary.Add("{ramCapacity=GB}", capacityGB.ToString());
             dictionary.Add("{ramClock}", clockMhz.ToString());
             dictionary.Add("{ramClock=Mhz}", clockMhz.ToString());
             dictionary.Add("{ramClock=Ghz}", clockGhz.ToString());
