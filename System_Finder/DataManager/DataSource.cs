@@ -7,6 +7,7 @@
         Ram,
         Hdd,
         Motherboard,
+        Environment,
         Combined
     }
 }

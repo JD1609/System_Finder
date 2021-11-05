@@ -62,3 +62,12 @@ Provides data in format based on input string.
 
 <br/>
 
+> **For environment:**
+
+| Variable              | Description                      |
+|-----------------------|----------------------------------|
+| **{userName}**        | Represents current user          |
+| **{operationSystem}** | Represents operation system name |
+
+<br/>
+

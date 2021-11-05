@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System_Finder.Hardware;
+using System_Finder.OperationSystem;
 using System.Linq;
 using System.Text;
 
@@ -58,12 +59,17 @@ namespace System_Finder.DataManager
                     AddMotherboardVariables(varDictionary);
                     break;
 
+                case DataSource.Environment:
+                    AddEnvironmentVariables(varDictionary);
+                    break;
+
                 case DataSource.Combined:
                     AddCpuVariables(varDictionary);
                     AddGpuVariables(varDictionary);
                     AddRamVariables(varDictionary);
                     AddHddVariables(varDictionary);
                     AddMotherboardVariables(varDictionary);
+                    AddEnvironmentVariables(varDictionary);
                     break;
             }
 
@@ -130,6 +136,15 @@ namespace System_Finder.DataManager
             var name = Motherboard.GetName();
 
             dictionary.Add("{motherboardName}", name);
+        }
+
+        private static void AddEnvironmentVariables(Dictionary<string, string> dictionary)
+        {
+            var OS = Environment.GetOS();
+            var user = System.Environment.UserName;
+
+            dictionary.Add("{operationSystem}", OS);
+            dictionary.Add("{userName}", user);
         }
     }
 }
