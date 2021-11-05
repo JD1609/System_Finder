@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Operation_System\Environment.cs" />
-    <Compile Include="HardwareToString.cs" />
+    <Compile Include="DataManager\DataProvider.cs" />
+    <Compile Include="DataManager\DataSource.cs" />
+    <Compile Include="OperationSystem\Environment.cs" />
     <Compile Include="Hardware\GPU.cs" />
     <Compile Include="Hardware\RAM.cs" />
     <Compile Include="Hardware\Motherboard.cs" />
@@ -51,5 +52,6 @@
     <Compile Include="Hardware\CPU.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

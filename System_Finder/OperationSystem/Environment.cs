@@ -1,6 +1,6 @@
 ﻿using System.Management;
 
-namespace System_Finder.Operation_System
+namespace System_Finder.OperationSystem
 {
     /// <summary>
     /// Returns system environment variables

@@ -56,16 +56,16 @@ namespace System_Finder.Hardware
         /// <summary>
         /// Returns CPU clock (by default in GHz) or in MHz
         /// </summary>
-        public static IEnumerable<int> GetClock(bool inGHz=true)
+        public static IEnumerable<float> GetClock(bool inGHz=true)
         {
             using (ManagementObjectSearcher cpu = new ManagementObjectSearcher("select MaxClockSpeed from Win32_Processor"))
             {
                 foreach (ManagementObject obj in cpu.Get())
                 {
                     if(inGHz)
-                        yield return int.Parse(obj["MaxClockSpeed"].ToString()) / 1000;
-                    else//TODO: In Mhz
-                        yield return int.Parse(obj["MaxClockSpeed"].ToString());
+                        yield return float.Parse(obj["MaxClockSpeed"].ToString()) / 1000;
+                    else// In Mhz
+                        yield return float.Parse(obj["MaxClockSpeed"].ToString());
                 }
             }
         }

@@ -12,30 +12,6 @@ namespace System_Finder.Hardware
     public static class RAM
     {
         /// <summary>
-        /// Returns RAM type
-        /// </summary>
-        public static string Type()
-        {
-            int type = 0;
-
-            ConnectionOptions connection = new ConnectionOptions { Impersonation = ImpersonationLevel.Impersonate };
-            ManagementScope scope = new ManagementScope(@"\\.\root\CIMV2", connection);
-            scope.Connect();
-            ObjectQuery query = new ObjectQuery("select MemoryType from Win32_PhysicalMemory");
-
-            using (ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query))
-            {
-                foreach (ManagementObject queryObj in searcher.Get())
-                {
-                    return TypeString(Convert.ToInt32(queryObj["MemoryType"]));
-                }
-            }
-
-            return null;
-        }
-
-
-        /// <summary>
         /// Returns RAM names separated by ";"
         /// </summary>
         public static string GetName()
@@ -56,6 +32,28 @@ namespace System_Finder.Hardware
                 return null;
         }
 
+        /// <summary>
+        /// Returns RAM type
+        /// </summary>
+        public static string GetType()
+        {
+            int type = 0;
+
+            ConnectionOptions connection = new ConnectionOptions { Impersonation = ImpersonationLevel.Impersonate };
+            ManagementScope scope = new ManagementScope(@"\\.\root\CIMV2", connection);
+            scope.Connect();
+            ObjectQuery query = new ObjectQuery("select MemoryType from Win32_PhysicalMemory");
+
+            using (ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query))
+            {
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    return TypeString(Convert.ToInt32(queryObj["MemoryType"]));
+                }
+            }
+
+            return null;
+        }
 
         /// <summary>
         /// Returns total RAM capacity (by default in GB) or in MB
@@ -80,15 +78,18 @@ namespace System_Finder.Hardware
 
 
         /// <summary>
-        /// Returns RAM clock in MHz
+        /// Returns RAM clock (by default in MHz) or in GHz
         /// </summary>
-        public static int? GetClock()
+        public static float? GetClock(bool inMHz=true)
         {
             using (ManagementObjectSearcher RAMClock = new ManagementObjectSearcher("select Speed from CIM_PhysicalMemory"))
             {
                 foreach (ManagementObject obj in RAMClock.Get())
                 {
-                    return int.Parse(obj["Speed"].ToString());
+                    if (inMHz)
+                        return float.Parse(obj["Speed"].ToString());
+                    else
+                        return float.Parse(obj["Speed"].ToString());
                 };
             }
 
