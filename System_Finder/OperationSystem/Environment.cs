@@ -8,16 +8,11 @@ namespace System_Finder.OperationSystem
     public static class Environment
     {
         /// <summary>
-        /// Returns username optimized for WPF labels - for classic operations use <see cref="System.Environment.UserName"/>
+        /// Returns username
         /// </summary>
         public static string GetUser()
         {
-            string user = System.Environment.UserName.ToString();
-
-            if (user.Contains("_"))
-                user = "_" + user;
-
-            return user;
+            return System.Environment.UserName.ToString();
         }
 
 
