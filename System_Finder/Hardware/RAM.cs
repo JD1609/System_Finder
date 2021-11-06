@@ -37,8 +37,6 @@ namespace System_Finder.Hardware
         /// </summary>
         public static string GetType()
         {
-            int type = 0;
-
             ConnectionOptions connection = new ConnectionOptions { Impersonation = ImpersonationLevel.Impersonate };
             ManagementScope scope = new ManagementScope(@"\\.\root\CIMV2", connection);
             scope.Connect();
@@ -88,8 +86,8 @@ namespace System_Finder.Hardware
                 {
                     if (inMHz)
                         return float.Parse(obj["Speed"].ToString());
-                    else
-                        return float.Parse(obj["Speed"].ToString());
+                    else // in Ghz
+                        return float.Parse(obj["Speed"].ToString()) / 1000;
                 };
             }
 
