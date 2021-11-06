@@ -89,7 +89,7 @@ namespace System_Finder.DataManager
                 dictionary.Add("{cpuName}", name[i]);
                 dictionary.Add("{cpuCores}", cores[i].ToString());
                 dictionary.Add("{cpuThreads}", threads[i].ToString());
-                dictionary.Add("{cpuClock}", clockMhz[i].ToString());
+                dictionary.Add("{cpuClock}", clockGhz[i].ToString());
                 dictionary.Add("{cpuClock=Mhz}", clockMhz[i].ToString());
                 dictionary.Add("{cpuClock=Ghz}", clockGhz[i].ToString());
             }
@@ -119,7 +119,7 @@ namespace System_Finder.DataManager
             dictionary.Add("{ramCapacity}", capacityGB.ToString());
             dictionary.Add("{ramCapacity=MB}", capacityMB.ToString());
             dictionary.Add("{ramCapacity=GB}", capacityGB.ToString());
-            dictionary.Add("{ramClock}", clockMhz.ToString());
+            dictionary.Add("{ramClock}", clockGhz.ToString());
             dictionary.Add("{ramClock=Mhz}", clockMhz.ToString());
             dictionary.Add("{ramClock=Ghz}", clockGhz.ToString());
         }
