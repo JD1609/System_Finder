@@ -1,6 +1,7 @@
 ﻿
 # DataProvider
 Provides data in format based on input string.
+- This class is not optimized for more components of one type!
 
 - For example:
 >  **input**: "Processor of this pc is: **{cpuName}** @**{cpuClock=Ghz}** GHz [**{cpuCores}** C/**{cpuThreads}** T]"
